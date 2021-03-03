@@ -55,18 +55,35 @@
 
                 <TextView
                     android:id="@+id/plant_item_title"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_normal"
                     android:layout_marginTop="@dimen/margin_normal"
                     android:text="@{plant.name}"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:gravity="center_horizontal"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/water_item_title"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/plant_item_image"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_weight="2"
                     tools:text="Tomato"/>
+
+                <TextView
+                    android:id="@+id/water_item_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@{String.valueOf(plant.wateringInterval)}"
+                    android:textAppearance="?attr/textAppearanceListItem"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/plant_item_title"
+                    app:layout_constraintTop_toBottomOf="@id/plant_item_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_weight="2"
+                    tools:text="Water"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
